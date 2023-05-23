@@ -34,14 +34,16 @@ datePick.addEventListener('input', onPickDate)
 function onStartBtn (){
     startBtn.disabled = true;
     const finalTime  = (pickedDate.selectedDates[0]).getTime();
-
-    countDown  = setInterval(() => {
-        const currentTime = Date.now()
-        const ms = finalTime - currentTime;
-        updateCountDown(ms);
+countDown  = setInterval(() => {
+    const currentTime = Date.now()
+    let ms = finalTime - currentTime;
+    updateCountDown(ms);
+    
+    if ( ms < 1000 && ms > 0){
+        clearInterval(countDown)
+    } 
         
     }, 1000)
-    
 }
 
 function onPickDate (){

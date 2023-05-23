@@ -15,8 +15,7 @@ function onCreatePromisesForm (event){
   const amountResult = amountInput.valueAsNumber;
 
 for (let position = 0; position < amountResult; position += 1)
-{createPromise(position, delayResult + stepResult * position )
- }
+{createPromise(position + 1 , delayResult + stepResult * position)}
 }
 
 function createPromise(position, delay) {
