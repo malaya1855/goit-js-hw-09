@@ -41,6 +41,7 @@ countDown  = setInterval(() => {
     
     if ( ms < 1000 && ms > 0){
         clearInterval(countDown)
+        Notify.success("Timer has finished counting down")
     } 
         
     }, 1000)
